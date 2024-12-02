@@ -757,9 +757,6 @@ public class JsonReader implements Closeable {
       }
     }
 
-    if ((pos + length < limit || fillBuffer(length + 1)) && isLiteral(buffer[pos + length])) {
-      return PEEKED_NONE; // Don't match trues, falsey or nullsoft!
-    }
 
     // We've found the keyword followed either by EOF or by a non-literal character.
     pos += length;
